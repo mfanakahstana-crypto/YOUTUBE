@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PIPS X PLUS PRO V1.0</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Orbitron', sans-serif; scroll-behavior: smooth; background: #eeeeee; color: #fff; }
+
+/* HEADER */
+header {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.7); padding: 14px 22px; z-index: 999;
+}
+nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+nav h1 { color: #000; font-size: 2rem; font-weight: 900; }
+nav .links a { color: #fff; margin-left: 14px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+nav .links a:hover { color: #ff0000; }
+
+/* HERO */
+.hero {
+  min-height: 90vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+  background: url('https://image.torob.com/base/images/1a/-G/1a-Gu6nqkDQd5_9w.jpg') center top/contain no-repeat;
+}
+.hero h2 { color: #000; font-size: 3rem; font-weight: 900; margin-bottom: 12px; }
+.hero p { color: #000; max-width: 900px; margin: 0 auto; }
+
+/* SECTIONS */
+section { padding: 80px 20px; text-align: center; }
+.wrap { max-width: 1100px; margin: 0 auto; }
+h2.section-title { color: #ff0000; font-size: 2.2rem; margin-bottom: 20px; }
+
+/* INFO BOX */
+.info-box { background: #111; padding: 18px; border-radius: 12px; border: 1px solid rgba(255,0,51,0.2); color: #fff; text-align: left; max-width: 900px; margin: 0 auto; }
+.info-box h3 { margin-top: 12px; color: #ff0000; }
+
+/* CARDS */
+.card-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 18px; }
+.card { width: 310px; background: #111; border-radius: 12px; padding: 14px; border: 1px solid rgba(255,0,51,0.2); text-align: center; }
+.card img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
+.card h3 { color: #ff0000; margin-bottom: 8px; }
+.card p { color: #fff; margin-bottom: 10px; }
+.buy-btn {
+  padding: 10px 18px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #ff0000, #ff00ff);
+  border: none; color: #000; font-weight: 800; cursor: pointer; transition: 0.3s;
+}
+.buy-btn:hover { transform: scale(1.05); box-shadow: 0 0 15px #ff0000, 0 0 30px #ff00ff; }
+
+/* RESULTS */
+.results-grid { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+.result { width: 260px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,0,51,0.2); background: #111; }
+.result img { width: 100%; display: block; }
+
+/* PAYMENT */
+.payment-grid { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+.pay-card { width: 140px; height: 140px; border-radius: 12px; background: #111; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(255,0,51,0.2); cursor: pointer; transition: 0.3s; }
+.pay-card i { font-size: 26px; color: #ff0000; }
+.pay-card:hover { transform: scale(1.05); }
+
+/* MODAL */
+.modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 4000; align-items: center; justify-content: center; }
+.modal { width: 92%; max-width: 520px; background: #111; border-radius: 12px; padding: 20px; border: 2px solid rgba(255,0,51,0.2); box-shadow: 0 30px 80px rgba(0,0,0,0.7); }
+.modal h3 { color: #ff0000; text-align: center; margin-bottom: 10px; }
+.modal p { color: #fff; margin: 6px 0; font-weight: 600; }
+.modal .close-btn { margin-top: 12px; padding: 10px 16px; border-radius: 40px; background: #111; border: none; color: #fff; cursor: pointer; transition: 0.3s; }
+.modal .close-btn:hover { background: #ff0000; }
+
+/* ACCUMARKETS LOGO */
+#accuLogo { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px; cursor: pointer; z-index: 999; }
+#removeLogo { position: fixed; top: 40%; left: 65%; font-size: 28px; color: #fff; cursor: pointer; z-index: 1000; }
+
+@media (max-width: 720px) { .card { width: 94%; } .card-grid { gap: 12px; } .results-grid { gap: 8px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <h1>PIPS X PLUS PRO V1.0</h1>
+    <div class="links">
+      <a href="#info">About</a>
+      <a href="#bots">Buy Bots</a>
+      <a href="#results">Results</a>
+      <a href="#payment">Payment</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <h2>PIPS X PLUS PRO V1.0</h2>
+    <p>PC BOT • MOBILE BOT • AI-POWERED TRADING — 24/7. Neon-speed execution, smart entries, killzones & news-aware.</p>
+  </div>
+</section>
+
+<section id="info">
+  <div class="wrap">
+    <h2 class="section-title">ABOUT PIPS X PLUS PRO V1.0</h2>
+    <div class="info-box">
+      <h3>📌 What the Bot Does</h3>
+      <p>✔ Trades 24/7 automatically<br>
+         ✔ Uses Killzones for best entries<br>
+         ✔ Avoids high-impact news events<br>
+         ✔ Works on PC & Mobile<br>
+         ✔ AI-powered smart entries<br>
+         ✔ Supports MT4 & MT5<br>
+         ✔ Minimum deposit R300<br>
+         ✔ Trades sessions<br>
+         ✔ Accuracy rate 100%<br>
+         ✔ Trusted works on Android & iOS
+      </p>
+      <h3>📌 Recommended Broker</h3>
+      <p><strong>EXNESS</strong> - <a href="https://one.exnessonelink.com/a/sgb3eifqtn?source=app&platform=mobile&pid=mobile_share" target="_blank" style="color:#ff0000;">Click Here</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="bots">
+  <div class="wrap">
+    <h2 class="section-title">BUY YOUR BOT</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://img.sanishtech.com/u/c6a78f23d6f4d59b54b4b0c5220a518f.jpg" alt="PC BOT">
+        <h3>PC BOT</h3>
+        <p>R1500</p>
+        <p>Full PC version — plug & play, runs on Windows, MT4/MT5 compatible.</p>
+        <button class="buy-btn" onclick="openModal('PC BOT',1500)">Buy PC BOT</button>
+      </div>
+      <div class="card">
+        <img src="https://img.sanishtech.com/u/32892eff2010d293007479402fe52455.jpg" alt="MOBILE BOT">
+        <h3>MOBILE BOT</h3>
+        <p>R800</p>
+        <p>Mobile version for Android & iOS — recommended for on-the-go trading alerts & execution.</p>
+        <button class="buy-btn" onclick="openModal('MOBILE BOT',800)">Buy MOBILE BOT</button>
+      </div>
+      <div class="card">
+        <img src="https://img.sanishtech.com/u/749b3f76381a4489cd6c34e96c97e4de.jpg" alt="PIPS X PLUS PRO">
+        <h3>PIPS X PLUS PRO</h3>
+        <p>R500</p>
+        <p>Compact version — fast signals, ideal for testing and small accounts.</p>
+        <button class="buy-btn" onclick="openModal('PIPS X PLUS PRO',500)">Buy PIPS X PLUS PRO</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <h2 class="section-title">RESULTS</h2>
+    <div class="results-grid">
+      <div class="result"><img src="https://img.sanishtech.com/u/1094d47a6ce7f86502cb2c953c0dd450.jpg" alt="Result 1"></div>
+      <div class="result"><img src="https://img.sanishtech.com/u/1094d47a6ce7f86502cb2c953c0dd450.jpg" alt="Result 2"></div>
+      <div class="result"><img src="https://img.sanishtech.com/u/9fa4b2f8738f6978523db6eb92458e32.jpg" alt="Result 3"></div>
+    </div>
+  </div>
+</section>
+
+<section id="payment">
+  <div class="wrap">
+    <h2 class="section-title">PAYMENT METHODS</h2>
+    <div class="payment-grid">
+      <div class="pay-card" onclick="window.open('https://www.tymebank.co.za','_blank')">
+        <i class="fas fa-university"></i>
+        <div style="margin-top:8px">Bank Transfer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Accumarkets logo -->
+<img src="https://www.ea-converter.com/admin/assets/images/logo.svg" id="accuLogo" onclick="window.open('https://my.accumarkets.co.za/register/','_blank')" />
+<div id="removeLogo" onclick="removeLogo()">X</div>
+
+<!-- Payment modal -->
+<div id="modalBackdrop" class="modal-backdrop">
+  <div class="modal" id="paymentModal">
+    <h3>Payment Instructions</h3>
+    <p id="productLabel">--</p>
+    <p>Bank Name: TymeBank</p>
+    <p>Account Number: 51036778671</p>
+    <p>Branch Code: 678910</p>
+    <p>Account Holder: Sedzani Cynthia NDOU</p>
+    <p>📱 After payment, send proof to WhatsApp support: 
+      <a href="https://wa.me/27696542903" target="_blank" style="color:#ff0000; text-decoration:none;">0696542903</a>
+    </p>
+    <button class="close-btn" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+function openModal(product,price){
+  document.getElementById('productLabel').innerText = price ? (product + " — R" + price) : product;
+  document.getElementById('modalBackdrop').style.display = 'flex';
+}
+function closeModal(){
+  document.getElementById('modalBackdrop').style.display = 'none';
+}
+document.getElementById('modalBackdrop').addEventListener('mouseleave', closeModal);
+
+function removeLogo(){
+  document.getElementById('accuLogo').style.display='none';
+  document.getElementById('removeLogo').style.display='none';
+}
+</script>
+
+</body>
+</html>
